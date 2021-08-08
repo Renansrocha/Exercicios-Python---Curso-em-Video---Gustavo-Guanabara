@@ -3,19 +3,18 @@ Crie um programa que tenha uma tupla totalmente preenchida
  com uma contagem por extenso, de zero até vinte.
  Seu programa deverá ler um número pelo teclado (entre 0 e 20) e mostrá-lo por extenso."""
 
-cont = "Zero", "Um", "Dois", "Três", "Quatro", "Cinco", "Seis",\
+cont = "Zero", "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", \
        "Sete", "Oito", "Nove", "Dez", "Onze", "Doze", "Treze", "Quartose", \
        "Quinze", "Dezesseis", "Dezessete", "Dezoito", "Dezenove", "Vinte"
 while True:
     n = int(input("Digite um número entre 0 e 20: "))
     if 0 <= n <= 20:
+        print(f"Você digitou o número {cont[n]}")
+        resposta = str(input("Quer continuar? [S/N]: ")).strip().upper()[0]
+    if 0 > n > 20:
+        print("Tente novamente. ", end=" ")
+    while resposta not in "SN":
+        resposta = str(input("Resposta inválida, por favor informe sim = [S] ou [N] = não:")).strip().upper()[0]
+    if resposta == "N":
         break
-    print("Tente novamente. ", end="")
-print(f"Você digitou o número {cont[n]}")
-
-
-
-
-''' while n != '0 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20':
-'''
-
+print("Obrigado. Volte sempre!")
